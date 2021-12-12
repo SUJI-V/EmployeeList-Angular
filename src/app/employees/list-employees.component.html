@@ -1,0 +1,19 @@
+<div class="form-group">
+    <input type="text" class="form-control" placeholder="Search By Name"
+     [(ngModel)]="searchTerm" >
+</div>
+<div  *ngFor="let employee of filteredEmployees">
+    
+        <app-display-employee [employee]="employee" [searchTerm]="searchTerm" (notifyDelete)="onDeleteNotification($event)">
+        </app-display-employee>
+    
+</div>
+<div *ngIf="error">
+    {{error}}
+</div>
+
+<!-- <button (click)="nextEmployee()" class="btn btn-primary">
+    View Next Employee
+</button>
+<br><br>
+<app-display-employee [employee]="employeeToDisplay" [employeeId]="employeeToDisplay.id"></app-display-employee> -->
